@@ -1,0 +1,15 @@
+<h2 class="mb-4">CART ID: {{cid}}</h2>
+<a href="http://localhost:8080/" class="btn btn-primary mb-2">Home</a>
+<button style="width: 120px" class="btn btn-danger mb-2" id="logout">Logout</button>
+
+{{#each products}}
+<div class="mt-4">
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Titulo de Producto</strong> {{title}}</li>
+    <li class="list-group-item"><strong>Precio:</strong> {{price}}</li>
+    <li class="list-group-item"><strong>Cantidad:</strong> {{quantity}}</li>
+  </ul>
+</div>
+{{/each}}
+
+<script src="/js/logout.js"></script>

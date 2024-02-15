@@ -1,0 +1,29 @@
+<h2 class="mb-4">Vista de Productos</h2>
+<a href='http://localhost:8080/' class="btn btn-primary mb-2">Home</a>
+<h3 class="mb-4">Bienvenido {{user.name}}</h3>
+<button class="btn btn-danger mb-2" id="logout">Logout</button>
+
+{{#each products}}
+<section>
+  <div class="mb-3">
+    <h5>{{title}}</h5>
+    <p>{{description}}</p>
+    <h5>{{price}}</h5>
+    <button id="addToCart" class="btn btn-primary" type="submit" data-product-id="{{_id}}">Agregar al Carrito</button>
+  </div>
+</section>
+{{/each}}
+
+<div class="pagination">
+  {{#if hasPrevPage}}
+  <a href="http://localhost:8080/products/?limit={{limit}}&sort={{sort}}&page={{prevPage}}{{#if category}}&category={{category}}{{/if}}"
+    class="btn btn-secondary">Next Page</a>
+  {{/if}}
+  {{#if hasNextPage}}
+  <a href="http://localhost:8080/products/?limit={{limit}}&sort={{sort}}&page={{nextPage}}{{#if category}}&category={{category}}{{/if}}"
+    class="btn btn-secondary">Previous Page</a>
+  {{/if}}
+</div>
+
+<script src="/js/addToCart.js"></script>
+<script src="/js/logout.js"></script>
